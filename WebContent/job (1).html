@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+    	height: 1000px;
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+  <style> 
+  
+  
+ 
+input.r1txtboxes {
+	border-radius:4px;
+	display: none;
+	width: 70px;
+
+}
+input.r2txtboxes {
+	border-radius:4px;
+	display: none;
+	width: 70px;
+
+}
+
+table.roundstable {
+	width: 100%;
+}
+
+table.aptiparam td{
+	
+	padding-left:20px ;
+	width: 160px;
+	height: 40px;
+}
+
+table.techparam td{
+	padding-left:20px ;
+	width: 160px;
+	height: 40px;
+}
+</style>
+  
+</head>
+<body>
+
+
+
+<script> 
+$(document).ready(function(){
+    $("#aptitudeWritten").click(function(){
+    	if((this).checked){
+    		
+    		 
+    		$("input:checkbox.aptichk").each(function() {
+    	        $(this).removeAttr("disabled");
+    	        $(this).prop('checked',true);
+    	        $(this).trigger('change');
+    	       
+    	    }); 
+    		
+        }
+    	else{
+    		
+    		$("input:checkbox.aptichk").each(function() {
+    	        $(this).prop("disabled",true);
+    	        $(this).prop('checked',false);
+    	        $(this).trigger('change');
+    	       
+    	    }); 
+    		$('#aptierror').html("");
+    	} 
+    });
+    
+});
+</script>
+
+
+<script> 
+$(document).ready(function(){
+    $("#TechnicalWritten").click(function(){
+    	    	if((this).checked){
+    	    		
+    	    		 
+    	    		$("input:checkbox.techchk").each(function() {
+    	    	        $(this).removeAttr("disabled");
+    	    	        $(this).prop('checked',true);
+    	    	        $(this).trigger('change');
+    	    	       
+    	    	    }); 
+    	    		
+    	        }
+    	    	else{
+    	    		
+    	    		$("input:checkbox.techchk").each(function() {
+    	    			$(this).prop("disabled",true);
+    	    	        $(this).prop('checked',false);
+    	    	        $(this).trigger('change');
+    	    	       
+    	    	    }); 
+    	    		$('#techerror').html("");
+    	    	}
+    	    });
+    
+    
+});
+</script>
+<script>
+$(document).ready(function(){
+
+$('.r1txtboxes').keyup(function () {
+ 
+    var sum = 0;
+    $('.r1txtboxes').each(function() {
+        sum += Number($(this).val());
+       
+    });
+     
+    $('#aptierror').html(sum + "&emsp;  --------  Caution : Weightage must be 100"); 
+});
+     
+});
+</script>
+<script>
+$(document).ready(function(){
+
+$('.r2txtboxes').keyup(function () {
+ 
+    var sum = 0;
+    $('.r2txtboxes').each(function() {
+        sum += Number($(this).val());
+       
+    });
+     
+    $('#techerror').html(sum + "&emsp;  --------  Caution : Weightage must be 100"); 
+});
+     
+});
+</script>
+
+<script> 
+$(document).ready(function(){
+    $("#apti1").change(function(){
+    	
+        if(document.getElementById('apti1').checked){
+    		document.getElementById('txtapti1').style.display='inline-block';
+        }else{
+        	
+        	document.getElementById('txtapti1').style.display='none';
+        	document.getElementById('txtapti1').value='';
+        	$('.r1txtboxes').trigger('keyup');
+        }
+        	
+        	
+    });
+    
+ $("#apti2").change(function(){
+    	
+        if(document.getElementById('apti2').checked){
+    		document.getElementById('txtapti2').style.display='inline-block';
+        }else{
+        	document.getElementById('txtapti2').style.display='none';
+        	document.getElementById('txtapti2').value='';
+        	$('.r1txtboxes').trigger('keyup');
+        }
+        	
+        	
+    });
+ 
+ $("#apti3").change(function(){
+ 	
+     if(document.getElementById('apti3').checked){
+ 		document.getElementById('txtapti3').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti3').style.display='none';
+     	document.getElementById('txtapti3').value='';
+     	$('.r1txtboxes').trigger('keyup');
+     }
+     	
+     	
+ });
+ 
+ 
+ $("#apti4").change(function(){
+ 	
+     if(document.getElementById('apti4').checked){
+ 		document.getElementById('txtapti4').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti4').style.display='none';
+     	document.getElementById('txtapti4').value='';
+     	$('.r1txtboxes').trigger('keyup');
+     }
+    
+ });
+ 
+	
+ $("#apti5").change(function(){
+ 	
+     if(document.getElementById('apti5').checked){
+ 		document.getElementById('txtapti5').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti5').style.display='none';
+     	document.getElementById('txtapti5').value='';
+     	$('.r1txtboxes').trigger('keyup');
+     }
+     	
+     	
+ });
+    
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#tech1").change(function(){
+    	
+        if(document.getElementById('tech1').checked){
+    		document.getElementById('txttech1').style.display='inline-block';
+        }else{
+        	document.getElementById('txttech1').style.display='none';
+        	document.getElementById('txttech1').value='';
+        	$('.r2txtboxes').trigger('keyup');
+        }
+        	
+        	
+    });
+    
+ $("#tech2").change(function(){
+    	
+        if(document.getElementById('tech2').checked){
+    		document.getElementById('txttech2').style.display='inline-block';
+        }else{
+        	document.getElementById('txttech2').style.display='none';
+        	document.getElementById('txttech2').value='';
+        	$('.r2txtboxes').trigger('keyup');
+        }
+        	
+        	
+    });
+ 
+ $("#tech3").change(function(){
+ 	
+     if(document.getElementById('tech3').checked){
+ 		document.getElementById('txttech3').style.display='inline-block';
+     }else{
+     	document.getElementById('txttech3').style.display='none';
+     	document.getElementById('txttech3').value='';
+     	$('.r2txtboxes').trigger('keyup');
+     }
+     	
+     	
+ });
+ 
+ 
+ $("#tech4").change(function(){
+ 	
+     if(document.getElementById('tech4').checked){
+ 		document.getElementById('txttech4').style.display='inline-block';
+     }else{
+     	document.getElementById('txttech4').style.display='none';
+     	document.getElementById('txttech4').value='';
+     	$('.r2txtboxes').trigger('keyup');
+     }
+     	
+     	
+         	
+         	
+ });
+    
+});
+</script>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div> 
+    <div class="col-sm-8 text-left"> 
+    
+      <h1>Post New Job</h1>
+      <hr>
+      
+      <form  role="form">
+	  
+      
+	  <div class="form-group">
+	   <label for="usr">Job Id:</label>
+      <input  type="text"  id="jobId"><br>
+	 <label>Job Description:</label>
+      <textarea class="form-control" rows="4"  id="comment"></textarea><br>
+      <label>Last Date:</label>
+      <input  type="date" name="date" id="date"><br><br>
+      
+   <label style="float: left;">Rounds:</label>
+<div id="myForm">
+<table class="roundstable" style="float: left;" >
+	<tr>
+		<td>
+				
+	 <input type="checkbox" id="aptitudeWritten"/>&nbsp;<label>Aptitude Written</label>
+       <div id="checkboxx" >
+	<table class="aptiparam"  >
+		<tr>
+			<td><input id="apti1" class="aptichk" type="checkbox" name="apti[1]" value="eee" disabled="disabled"/>parameter1</td>
+			<td><input id="txtapti1" class="r1txtboxes" type="text" ></td>
+		
+		</tr>
+	
+		<tr>
+			<td><input id="apti2" class="aptichk" type="checkbox" name="apti[2]" value="ece" disabled="disabled"/>parameter2</td>
+			<td><input id="txtapti2" class="r1txtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td><input id="apti3" class="aptichk" type="checkbox" name="apti[3]" value="it" disabled="disabled" />parameter3</td>
+			<td><input id="txtapti3" class="r1txtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td> <input id="apti4" class="aptichk" type="checkbox" name="apti[4]" value="csc" disabled="disabled" />parameter4</td>
+			<td><input id="txtapti4" class="r1txtboxes" type="text"></td>
+		
+		</tr>
+	
+	    <tr>
+			<td> <input id="apti5" class="aptichk" type="checkbox" name="apti[5]" value="mec" disabled="disabled"/>parameter5</td>
+			<td><input id="txtapti5" class="r1txtboxes" type="text"></td>
+		
+		</tr>
+		
+	</table>
+	
+
+	</div>
+	  <label id="aptierror" style="padding-left: 20%;color: red;"></label>
+		</td>
+		
+		</tr>
+		<tr>
+		<td>
+			<input type="checkbox" id="TechnicalWritten"/>&nbsp;<label>Technical Written</label>
+			<div id="techh">
+	<table class="techparam" >
+		<tr>
+			<td><input id="tech1" class="techchk" type="checkbox" name="tech[1]" disabled="disabled" />parameter1</td>
+			<td><input id="txttech1" class="r2txtboxes" type="text" ></td>
+		
+		</tr>
+	
+		<tr>
+			<td><input id="tech2" class="techchk" type="checkbox" name="tech[2]" disabled="disabled" />parameter2</td>
+			<td><input id="txttech2" class="r2txtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td><input id="tech3" class="techchk" type="checkbox" name="tech[3]" disabled="disabled" />parameter3</td>
+			<td><input id="txttech3" class="r2txtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td> <input id="tech4" class="techchk" type="checkbox" name="tech[4]"disabled="disabled" />parameter4</td>
+			<td><input id="txttech4" class="r2txtboxes" type="text"></td>
+		
+		</tr>
+		</table>
+		
+		</div>	
+		<label id="techerror" style="padding-left: 20%;color: red;"></label>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<input type="checkbox" id="GroupDiscussion" value="groupdiscussion"/>&nbsp;<label>Group Discussion</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="JustAMinute" value="jam"/>&nbsp;<label>Just A Minute</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="Technical" value="techf2f"/>&nbsp;<label>Technical</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="HR" value="hr"/>&nbsp;<label>HR</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="center"><input type="submit" value="submit" >
+		</td>
+	</tr>
+	
+	
+</table>
+
+    </div>
+    </div>
+   
+    </form>
+    </div>
+    
+      <div class="col-sm-2 sidenav">
+      
+    </div>
+     
+ 
+     </div>
+     
+      </div>
+       
+       
+       
+ <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>

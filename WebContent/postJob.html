@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<head>
+
+
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+  <style> 
+ 
+#checkboxx{
+display: none;
+}
+#techh{
+display: none;
+}
+input.rtxtboxes {
+	border-radius:4px;
+	display: none;
+
+}
+
+td {
+	padding:5px 20px;
+}
+
+
+
+
+</style>
+  
+</head>
+<body>
+<script type="text/javascript">
+     $(document).ready(function () {
+            var initValues = [];
+
+            $('#aptitudeWritten').click(function () {
+                $('#myForm').find(':checkbox[name^="apti"]').each(function () {
+                    $(this).prop("checked", ($.inArray($(this).val(), initValues) != -1));
+                });
+                       });
+
+            $('#aptitudeWritten').trigger('unClick');
+        });
+     </script>
+     <script type="text/javascript">
+     $(document).ready(function () {
+            var initValues = [];
+
+            $('#TechnicalWritten').click(function () {
+                $('#myForm').find(':checkbox[name^="tech"]').each(function () {
+                    $(this).prop("checked", ($.inArray($(this).val(), initValues) != -1));
+                });
+                       });
+
+            $('#TechnicalWritten').trigger('unClick');
+        });
+     </script>
+<script> 
+$(document).ready(function(){
+    $("#aptitudeWritten").click(function(){
+    	if(document.getElementById('aptitudeWritten').checked){
+        $("#checkboxx").slideDown();
+        }
+    	else{
+    	$("#checkboxx").slideUp();
+    	
+    	document.getElementById('txtapti1').value='';
+    	document.getElementById('txtapti2').value='';
+    	document.getElementById('txtapti3').value='';
+    	document.getElementById('txtapti4').value='';
+    	document.getElementById('txtapti5').value='';
+    	document.getElementById('txtapti1').style.display='none';
+    	document.getElementById('txtapti2').style.display='none';
+    	document.getElementById('txtapti3').style.display='none';
+    	document.getElementById('txtapti4').style.display='none';
+    	document.getElementById('txtapti5').style.display='none';
+    	
+    	}
+    });
+    $("#aptiupdate").click(function(){
+        $("#checkboxx").slideUp("slow");
+    });
+    
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#apti1").click(function(){
+    	
+        if(document.getElementById('apti1').checked){
+    		document.getElementById('txtapti1').style.display='inline-block';
+        }else{
+        	document.getElementById('txtapti1').style.display='none';
+        	document.getElementById('txtapti1').value='';
+        }
+        	
+        	
+    });
+    
+ $("#apti2").click(function(){
+    	
+        if(document.getElementById('apti2').checked){
+    		document.getElementById('txtapti2').style.display='inline-block';
+        }else{
+        	document.getElementById('txtapti2').style.display='none';
+        	document.getElementById('txtapti2').value='';
+        }
+        	
+        	
+    });
+ 
+ $("#apti3").click(function(){
+ 	
+     if(document.getElementById('apti3').checked){
+ 		document.getElementById('txtapti3').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti3').style.display='none';
+     	document.getElementById('txtapti3').value='';
+     }
+     	
+     	
+ });
+ 
+ 
+ $("#apti4").click(function(){
+ 	
+     if(document.getElementById('apti4').checked){
+ 		document.getElementById('txtapti4').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti4').style.display='none';
+     	document.getElementById('txtapti4').value='';
+     }
+     	
+     	
+     
+ });
+ $("#apti5").click(function(){
+  	
+     if(document.getElementById('apti5').checked){
+ 		document.getElementById('txtapti5').style.display='inline-block';
+     }else{
+     	document.getElementById('txtapti5').style.display='none';
+     	document.getElementById('txtapti5').value='';
+     }
+     	
+     	
+ });
+    
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#tech1").click(function(){
+    	
+        if(document.getElementById('tech1').checked){
+    		document.getElementById('txttech1').style.display='inline-block';
+        }else{
+        	document.getElementById('txttech1').style.display='none';
+        	document.getElementById('txttech1').value='';
+        }
+        	
+        	
+    });
+    
+ $("#tech2").click(function(){
+    	
+        if(document.getElementById('tech2').checked){
+    		document.getElementById('txttech2').style.display='inline-block';
+        }else{
+        	document.getElementById('txttech2').style.display='none';
+        	document.getElementById('txttech2').value='';
+        }
+        	
+        	
+    });
+ 
+ $("#tech3").click(function(){
+ 	
+     if(document.getElementById('tech3').checked){
+ 		document.getElementById('txttech3').style.display='inline-block';
+     }else{
+     	document.getElementById('txttech3').style.display='none';
+     	document.getElementById('txttech3').value='';
+     }
+   	
+ });
+ 
+ $("#tech4").click(function(){
+ 	
+     if(document.getElementById('tech4').checked){
+ 		document.getElementById('txttech4').style.display='inline-block';
+     }else{
+     	document.getElementById('txttech4').style.display='none';
+     	document.getElementById('txttech4').value='';
+     }
+       	
+ });
+    
+});
+</script>
+<script> 
+$(document).ready(function(){
+    $("#TechnicalWritten").click(function(){
+    	if(document.getElementById('TechnicalWritten').checked){
+        $("#techh").slideDown();
+        }
+    	else{
+    	$("#techh").slideUp();
+    	
+    	document.getElementById('txttech1').value='';
+    	document.getElementById('txttech2').value='';
+    	document.getElementById('txttech3').value='';
+    	document.getElementById('txttech4').value='';
+    	document.getElementById('txttech1').style.display='none';
+    	document.getElementById('txttech2').style.display='none';
+    	document.getElementById('txttech3').style.display='none';
+    	document.getElementById('txttech4').style.display='none';
+    	    	
+    	}
+    });
+    $("#techupdate").click(function(){
+        $("#techh").slideUp("slow");
+   
+    });
+    
+});
+</script>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div> 
+    <div class="col-sm-8 text-left"> 
+    
+      <h1>Post New Job</h1>
+      <hr>
+      
+     <form action="JobController" method="post">
+
+		<input type="text" name="jobTitle"> <br>
+		<textarea rows="10" cols="10" name="jobDescription"></textarea>
+		<br> <input type="date" name="lastDate"> <br>
+
+		<c:if test="${roundsList.size() gt 0 }">
+
+
+			<c:forEach var="round" items="${roundsList}">
+
+				<input type="checkbox" class="x" value="${round.roundId}"
+					name="rounds">${round.name}
+			<br>
+
+
+				<div class="${round.roundId}-param" id="params"
+					name="${round.name}-paramm">
+
+					<c:forEach var="parameter" items="${round.parameterSet}">
+
+						<input type="checkbox" name="${round.roundId}-names"
+							id="${round.name}-names" value="${parameter.parameterId}">${parameter.name}
+					<input type="text" id="textboxes" name="${parameter.parameterId}-names" />
+						<br>
+
+					</c:forEach>
+				</div>
+
+
+			</c:forEach>
+
+
+		</c:if>
+		<input type="submit" value="Submit">
+	</form>
+    </div>
+     </div>
+     
+      </div>
+       
+ <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>

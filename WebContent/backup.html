@@ -1,0 +1,122 @@
+
+ <form  role="form">
+  
+	  <div class="form-group">
+	   <label for="usr">Job Id:</label>
+      <input  type="text"  id="jobId"><br>
+	 <label>Job Description:</label>
+      <textarea class="form-control" rows="4"  id="comment"></textarea><br>
+      <label>Last Date:</label>
+      <input  type="date" name="date" id="date"><br><br>
+      
+   <label style="float: left;">Rounds:</label>
+<div id="myForm">
+<table style="float: left;">
+	<tr>
+		<td>
+				
+	 <input type="checkbox" id="aptitudeWritten"/>&nbsp;<label>Aptitude Written</label>
+       <div id="checkboxx">
+	<table >
+		<tr>
+			<td><input id="apti1" type="checkbox" name="apti[1]" value="eee" onclick="EnableDisableTextBox()"  />parameter1</td>
+			<td><input id="txtapti1" class="rtxtboxes" type="text" ></td>
+		
+		</tr>
+	
+		<tr>
+			<td><input id="apti2" type="checkbox" name="apti[2]" value="ece" pattern="[A-Za-z]{3}"/>parameter2</td>
+			<td><input id="txtapti2" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td><input id="apti3" type="checkbox" name="apti[3]" value="it" />parameter3</td>
+			<td><input id="txtapti3" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td> <input id="apti4" type="checkbox" name="apti[4]" value="csc" />parameter4</td>
+			<td><input id="txtapti4" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+	
+	    <tr>
+			<td> <input id="apti5" type="checkbox" name="apti[5]" value="mec" />parameter5</td>
+			<td><input id="txtapti5" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+	
+	</table>
+	<input type="button" value="validate & collapse" id="aptiupdate"> 
+	</div>
+	  
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<input type="checkbox" id="TechnicalWritten"/>&nbsp;<label>Technical Written</label>
+			<div id="techh">
+			<table >
+		<tr>
+			<td><input id="tech1" type="checkbox" name="tech[1]" value="" />parameter1</td>
+			<td><input id="txttech1" class="rtxtboxes" type="text" ></td>
+		
+		</tr>
+	
+		<tr>
+			<td><input id="tech2" type="checkbox" name="tech[2]" value="" />parameter2</td>
+			<td><input id="txttech2" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td><input id="tech3" type="checkbox" name="tech[3]" value="" />parameter3</td>
+			<td><input id="txttech3" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+		<tr>
+			<td> <input id="tech4" type="checkbox" name="tech[4]" value="" />parameter4</td>
+			<td><input id="txttech4" class="rtxtboxes" type="text"></td>
+		
+		</tr>
+		</table>
+		<input type="button" id="techupdate" value="^">
+		</div>	
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<input type="checkbox" id="GroupDiscussion" value="groupdiscussion"/>&nbsp;<label>Group Discussion</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="JustAMinute" value="jam"/>&nbsp;<label>Just A Minute</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="Technical" value="techf2f"/>&nbsp;<label>Technical</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="checkbox" id="HR" value="hr"/>&nbsp;<label>HR</label>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td align="center"><input type="submit" value="submit" >
+		</td>
+	</tr>
+	
+	
+</table>
+
+    </div>
+    </div>
+   
+    </form>
